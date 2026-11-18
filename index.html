@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>शिंदे देशमुख टेक्निकल इन्स्टिट्यूट, सातारा</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-color: #0d2c54;
+    }
+    iframe {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <iframe id="appFrame" allow="geolocation *; camera *; microphone *" allowfullscreen></iframe>
+
+  <script>
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwPt9EyNTKQ7juXCuTzxppD5YXHZwsHoToAS8P49t_1z9FNCgUjPOBpUim9Fyk6Qic/exec";
+    const queryString = window.location.search;
+    document.getElementById("appFrame").src = SCRIPT_URL + queryString;
+  </script>
+</body>
+</html>
