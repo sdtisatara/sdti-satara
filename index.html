@@ -6,12 +6,21 @@
   <title>SDTI Satara - Smart Attendance & Task System</title>
   <link rel="icon" href="https://lh3.googleusercontent.com/d/19kopqfzWax1nSnGhIJjNPmziaBdr-1eU" type="image/png">
   <script>
-    // तुमची नवीन Google Apps Script Web App URL खालील दुहेरी अवतरण चिन्हांमध्ये (" ") पेस्ट करा
-    const SCRIPT_URL = "तुमची_नवीन_EXEC_लिंक_इथे_पेस्ट_करा";
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxTSJHTloAKmyFP1npJq0--EN0kfEpCDklb7JaVszraNfVN_tzeohpytungmxd9LTghnw/exec";
 
-    // QR स्कॅन किंवा रजा अर्जाचे पॅरामीटर्स पुढे पाठवणे
-    const params = window.location.search || "";
-    window.location.replace(SCRIPT_URL + params);
+    // URL मधील qrClass आणि mode पॅरामीटर्स अचूक वाचून पुढे पाठवणे
+    const urlParams = new URLSearchParams(window.location.search);
+    const qrClass = urlParams.get('qrClass');
+    const mode = urlParams.get('mode');
+
+    let targetUrl = SCRIPT_URL;
+    if (qrClass) {
+      targetUrl += "?qrClass=" + encodeURIComponent(qrClass);
+    } else if (mode) {
+      targetUrl += "?mode=" + encodeURIComponent(mode);
+    }
+
+    window.location.replace(targetUrl);
   </script>
 </head>
 <body style="font-family: 'Segoe UI', Tahoma, sans-serif; text-align: center; padding-top: 80px; background-color: #f0f4f8; color: #0f2942;">
