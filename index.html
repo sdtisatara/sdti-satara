@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SDTI Satara - Smart Attendance & Task System</title>
+  <link rel="icon" href="https://lh3.googleusercontent.com/d/19kopqfzWax1nSnGhIJjNPmziaBdr-1eU" type="image/png">
+  <script>
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxTSJHTloAKmyFP1npJq0--EN0kfEpCDklb7JaVszraNfVN_tzeohpytungmxd9LTghnw/exec";
+    const urlParams = new URLSearchParams(window.location.search);
+    const qrClass = urlParams.get('qrClass');
+    const mode = urlParams.get('mode');
+
+    let targetUrl = SCRIPT_URL;
+    if (qrClass) {
+      targetUrl += "?qrClass=" + encodeURIComponent(qrClass).replace(/\(/g, '%28').replace(/\)/g, '%29');
+    } else if (mode) {
+      targetUrl += "?mode=" + encodeURIComponent(mode);
+    }
+    window.location.replace(targetUrl);
+  </script>
+</head>
+<body style="font-family:sans-serif; text-align:center; padding-top:60px; background:#f0f4f8; color:#0f2942;">
+  <h3>⏳ शिंदे देशमुख टेक्निकल इन्स्टिट्यूट, सातारा</h3>
+  <p style="color:#475569; margin-top:8px;">स्मार्ट हजेरी प्रणाली उघडत आहे, कृपया प्रतीक्षा करा...</p>
+</body>
+</html>
