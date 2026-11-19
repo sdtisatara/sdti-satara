@@ -2,46 +2,20 @@
 <html lang="mr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SDTI Satara - Smart Attendance & Task System</title>
   <link rel="icon" href="https://lh3.googleusercontent.com/d/19kopqfzWax1nSnGhIJjNPmziaBdr-1eU" type="image/png">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    html, body {
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      background-color: #f0f4f8;
-    }
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-      display: block;
-    }
-  </style>
-</head>
-<body>
-
-  <iframe 
-    id="sdtiAppFrame" 
-    allow="geolocation *; camera *; microphone *" 
-    sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation">
-  </iframe>
-
   <script>
-    // तुमची नवीन Google Apps Script Web App URL
-    const SCRIPT_BASE_URL = "https://script.google.com/macros/s/AKfycbwPt9EyNTKQ7juXCuTzxppD5YXHZwsHoToAS8P49t_1z9FNCgUjPOBpUim9Fyk6Qic/exec";
+    // तुमची नवीन Google Apps Script Web App URL खालील दुहेरी अवतरण चिन्हांमध्ये (" ") पेस्ट करा
+    const SCRIPT_URL = "तुमची_नवीन_EXEC_लिंक_इथे_पेस्ट_करा";
 
-    // URL मधील ?qrClass=... किंवा ?mode=leave पॅरामीटर्स पुढे Apps Script कडे पाठवणे
-    const queryParams = window.location.search;
-    const frame = document.getElementById("sdtiAppFrame");
-    frame.src = SCRIPT_BASE_URL + (queryParams ? queryParams : "");
+    // QR स्कॅन किंवा रजा अर्जाचे पॅरामीटर्स पुढे पाठवणे
+    const params = window.location.search || "";
+    window.location.replace(SCRIPT_URL + params);
   </script>
-
+</head>
+<body style="font-family: 'Segoe UI', Tahoma, sans-serif; text-align: center; padding-top: 80px; background-color: #f0f4f8; color: #0f2942;">
+  <h3>⏳ शिंदे देशमुख टेक्निकल इन्स्टिट्यूट, सातारा</h3>
+  <p style="color: #475569; margin-top: 8px;">स्मार्ट हजेरी प्रणाली उघडत आहे, कृपया प्रतीक्षा करा...</p>
 </body>
 </html>
